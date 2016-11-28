@@ -1,0 +1,19 @@
+{
+  "name": "stream1project",
+  "version": "1.0.0",
+  "description": "this is the stream one band project for code institute",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brendanjgreene/stream1Project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brendanjgreene/stream1Project/issues"
+  },
+  "homepage": "https://github.com/brendanjgreene/stream1Project#readme"
+}

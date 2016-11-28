@@ -23,7 +23,7 @@ angular.module('BandApp').config(function($routeProvider){
 		controller: "gigsController"
 	})
 	.when('/subscribe', {
-		templateUrl: "templates/sebscribe.html",
+		templateUrl: "templates/subscribe.html",
 		controller: "subscribeController"
 	});
 });

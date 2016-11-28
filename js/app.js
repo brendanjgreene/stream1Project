@@ -1,29 +1,29 @@
 angular.module('BandApp', ['ngRoute', 'RouteControllers']);
 
 angular.module('BandApp').config(function($routeProvider){
-
+	
 	$routeProvider.when('/', {
-		templateURL: 'templates/home.html',
+		templateUrl: 'templates/home.html',
 		controller: 'HomeController'
 	})
-	.when('/About_Us', {
-		templateURL: 'templates/About_Us.html',
-		controller: 'AboutUSControler'
+	.when('/aboutUs', {
+		templateUrl: "templates/aboutUs.html",
+		controller: "aboutUsController"
 	})
-	.when('/Freebies', {
-		templateURL: 'templates/Freebies.html',
-		controller: 'FreebiesContoller'
+	.when('/freebies', {
+		templateUrl: "templates/freebies.html",
+		controller: "freebiesController"
 	})
-	.when('/Tracks', {
-		templateURL: 'templates/Tracks.html',
-		controller: 'TracksController'
+	.when('/tracks', {
+		templateUrl: "templates/tracks.html",
+		controller: "tracksController"
 	})
-	.when('/Gigs', {
-		templateURL: 'templates/Gigs.html',
-		controller: 'GigsController'
+	.when('/gigs', {
+		templateUrl: "templates/gigs.html",
+		controller: "gigsController"
 	})
-	.when('/Subscribe', {
-		templateURL: 'templates/Subscribe.html'
-		controller: 'SubscribeController'
+	.when('/subscribe', {
+		templateUrl: "templates/sebscribe.html",
+		controller: "subscribeController"
 	});
 });

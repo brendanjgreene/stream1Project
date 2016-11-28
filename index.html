@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html ng-app='BandApp'>
 <head>
 	<title>Suzie and the Hep Cats</title>
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
 	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
 	<style type="text/css">
 		body {
-			padding-top: 70px;
+			background-color: white;
 			background-image: url("assets/images/Cats-2014.2.jpeg");
 			background-size: cover;
-			background-color: white;
+			padding-top: 70px;
 		}
 	</style>
 </head>
@@ -18,19 +19,25 @@
 	<nav class="navbar navbar-inverse navbar-fixed-bottom">
 		<div class="container">
 			<div class="navbar-header">
-				<a class="navbar-brand" href="#/">Suzie & The Hep Cats</a>
+				<a class="navbar-brand" href="#/">Suzie and The Hep Cats</a>
 			</div>
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="#/">Home</a></li>
-				<li><a href="#/About_Us">About Us</a></li>
-				<li><a href="#/Freebies">Freebies</a></li>
-				<li><a href="#/Tracks">Tracks</a></li>
-				<li><a href="#/Gigs">Gigs</a></li>
-				<li><a href="#/Subscribe">Subscribe</a></li>
+				<li><a href="#/aboutUs">About Us</a></li>
+				<li><a href="#/freebies">Freebies</a></li>
+				<li><a href="#/tracks">Tracks</a></li>
+				<li><a href="#/gigs">Gigs</a></li>
+				<li><a href="#/subscribe">Subscribe</a></li>
 			</ul>
 		</div>
 	</nav>
-	<div class="ng-view"></div>
+	<div class="container">
+	<div><h1>Test</h1></div>
+	<div ng-view>
+		
+	
+	</div>>
+	</div>
 <script src='js/app.js'></script>
 <script src='js/controller.js'></script>
 <script src='js/service.js'></script>

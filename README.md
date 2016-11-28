@@ -12,9 +12,23 @@ This App will be a band website
 - None yet!
 
 ### Features Left to implement
+- Complete a working prototype of a website for a band. Use the wireframes you created in the UX lesson as a starting point. Use your own assets or you can use the assets zip file below.
+
+- The band is a ‘Swing/Jive’ band and have around 20 years experience of performing live at numerous events throughout Ireland. You have been given the requirements after interviews with the clients representatives.   The requirements are:
+
 - The band requires a web site to showcase their music and publicise their availability for gigs.
-- They would like to target the corporate and wedding market as their primary target audience. They also want the website to be a site their fans can visit to see and hear clips from their back catalogue and any new material as it becomes available.
-- 
+
+- They would like to target the corporate and wedding market as their primary target audience. 
+- They also want the website to be a site their fans can visit to see and hear clips from their back catalogue and any new material as it becomes available.
+The band will provide the UX/UI team with the following assets:
+
+- Photos and biographies of the band members
+
+- The band are recording an audio clip that they would like to showcase on the new website
+- They have a number of audio clips that they can make available and would like to showcase on their web site.
+- Users should be able to search for the band’s commercial tracks and purchase them from third party sites such as itunes. They would like to explore the possibility of creating a mail list of ‘fans’ that they could communicate with to inform them of upcoming gigs and any new material that they have made available via the web.  Users should be able to subscribe to a newsletter of the band’s latest information.
+
+- They would also like to publicise upcoming gigs in the future. They would also like users to be able to contact them with potential work related leads. The site should contain the ability to check on the band’s availability for future bookings and costs associated with various types of booking. They are in the process of creating a social media presence and would like links to Facebook, Twitter and YouTube pages. They intend to set up a channel in YouTube of videos they have recorded.
 
 ## Tech Used
 

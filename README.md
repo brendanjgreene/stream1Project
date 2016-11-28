@@ -12,7 +12,9 @@ This App will be a band website
 - None yet!
 
 ### Features Left to implement
--
+- The band requires a web site to showcase their music and publicise their availability for gigs.
+- They would like to target the corporate and wedding market as their primary target audience. They also want the website to be a site their fans can visit to see and hear clips from their back catalogue and any new material as it becomes available.
+- 
 
 ## Tech Used
 

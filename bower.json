@@ -1,0 +1,17 @@
+{
+  "name": "stream1project",
+  "description": "this is the stream one band project for code institute",
+  "main": "index.js",
+  "authors": [
+    "Brendan Greene"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/brendanjgreene/stream1Project",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

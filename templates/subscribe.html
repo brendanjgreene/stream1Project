@@ -1,1 +1,20 @@
 <div h1-header></div>
+<div class="row">
+			<div class="col-sm-2"></div>
+            <div class="col-sm-8 container">
+                <form name="subscriptionForm" ng-submit="submitForm()" novalidate>
+                    <div class="form-group">
+                        <label>Name</label>
+                        <input type="text" name="name" class="form-control" ng-model="user.username" required>
+                        <p ng-show="subscriptionForm.name.$pristine" class="help-block">Your username is required</p>
+                    </div>
+                    <div class="form-group">
+                        <label>Email</label>
+                        <input type="email" name="email" class="form-control" ng-model="user.email" required>
+                        <p ng-show="subscriptionForm.email.$pristine" class="help-block">Your email is required</p>
+                    </div>
+ 
+                    <button type="submit" class="btn btn-primary" ng-disabled="subscriptionForm.$invalid">Register</button>
+                </form>
+            </div>
+</div>

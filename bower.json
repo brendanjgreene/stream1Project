@@ -19,5 +19,6 @@
     "angular": "^1.5.9",
     "angular-route": "^1.5.9",
     "a0-angular-storage": "^0.0.15"
-  }
+  },
+  "dependencies": {}
 }

@@ -2,10 +2,11 @@
 	<div class="panel">
 		<div class="panel-heading">Tracks</div>
 		<table class="table">
-				<caption>Below you will find a list of Free downloads etc..</caption>
+				<caption> Below you will find a list of tracks and albums available for purchase. clic on albums to expand the view</caption>
 				<thead>
 					<tr>
-						<th>Preview</th>
+						
+						<th>Album</th>
 						<th>Title</th>
 						<th>Artist</th>
 						<th>iTunes</th>
@@ -14,8 +15,14 @@
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td><span><audio controls="mute" style="width: 5px"><source src="assets/audio/ImABeliever.mp3"></audio></span></td>
+					<tr data-toggle="collapse" data-target=".monkees" class="clickable">
+						<td>The Monkees Greatest Hits</td>
+						<td> </td>
+						<td>The Monkees</td>
+						<td colspan="3"></td>
+					</tr>
+					<tr id="accordion" class="collapse monkees">
+						<td><span><audio controls="mute" style="width: 15px"><source src="assets/audio/ImABeliever.mp3"></audio></span></td>
 						<td>I'm a Believer</td>
 						<td>The Monkees</td>
 						<td><a href="https://geo.itunes.apple.com/ie/album/im-a-believer/id4512505?i=4512481&mt=1&app=music" style="display:inline-block;overflow:hidden;background:url(//linkmaker.itunes.apple.com/assets/shared/badges/en-us/music-lrg.svg) no-repeat;width:82px;height:30px;background-size:contain;"></a></td>
@@ -24,35 +31,41 @@
           				<span class="glyphicon glyphicon-shopping-cart"></span> Purchase
         				</button></td>
 					</tr>
-					<tr>
-						<td><span><audio controls="mute" style="width: 5px"><source src="assets/audio/DaydreamBeliever.mp3"></audio></span></td>
+					
+					<tr class="collapse monkees">
+						<td><span><audio controls="mute" style="width: 15px"><source src="assets/audio/DaydreamBeliever.mp3"></audio></span></td>
 						<td>Daydream Believer</td>
 						<td>The Monkees</td>
 						<td><button type="button" class="btn btn-default btn-sm">
-          				<span class="glyphicon glyphicon-download-alt
-"></span> Download
+          				<span class="glyphicon glyphicon-download-alt"></span> Download
         				</button></td>
 					</tr>
-					<tr>
-						<td><span><audio controls="mute" style="width: 5px"><source src="assets/audio/Clarksville.mp3"></audio></span></td>
+					<tr class="collapse monkees">
+						<td><span><audio controls="mute" style="width: 15px"><source src="assets/audio/Clarksville.mp3"></audio></span></td>
 						<td>Clarksville</td>
 						<td>The Monkees</td>
 						<td><button type="button" class="btn btn-default btn-sm">
           				<span class="glyphicon glyphicon-download-alt"></span> Download
         				</button></td>
 					</tr>
-					<tr>
-						<<td><span><audio controls="mute" style="width: 5px"><source src="assets/audio/SteppingStone.mp3"></audio></span></td>
+					<tr data-toggle="collapse" data-target=".unknown" class="clickable">
+						<td>Unknown Artists</td>
+						<td> </td>
+						<td>Unknown</td>
+						<td colspan="3"></td>
+					</tr>
+					<tr class="collapse unknown">
+						<td><span><audio controls="mute" style="width: 15px"><source src="assets/audio/SteppingStone.mp3"></audio></span></td>
 						<td>Stepping Stone</td>
-						<td>The Monkees</td>
+						<td>Unknown</td>
 						<td><button type="button" class="btn btn-default btn-sm">
           				<span class="glyphicon glyphicon-download-alt"></span> Download
         				</button></td>
 					</tr>
-					<tr>
-						<<td><span><audio controls="mute" style="width: 5px"><source src="assets/audio/tailtoddle_lo.mp3"></audio></span></td>
+					<tr class="collapse unknown">
+						<td><span><audio controls="mute" style="width: 15px"><source src="assets/audio/tailtoddle_lo.mp3"></audio></span></td>
 						<td>Tail Toddle</td>
-						<td>The Monkees</td>
+						<td>Unknown</td>
 						<td><button type="button" class="btn btn-default btn-sm">
           				<span class="glyphicon glyphicon-download-alt"></span> Download
         				</button></td>

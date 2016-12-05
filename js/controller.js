@@ -21,6 +21,18 @@ angular.module('RouteControllers', [])
             {item: "5", date: "2017-11-27", venue: "Caroline's 46thB-Day Party", Price: 674}
         ];
         $scope.Gigs = Gigs;
+        $scope.gigSubmissionUser = {};
+
+        $scope.submitForm = function(){
+            if ($scope.gigSubmissionForm.$valid){
+                $scope.gigSubmissionUser.username = $scope.user.username;
+                $scope.gigSubmissionUser.userphone = $scope.user.userphone;
+                $scope.gigSubmissionUser.date = $scope.user.date;
+                $scope.gigSubmissionUser.comment = $scope.user.comment;
+            }
+
+            console.log($scope.gigSubmissionUser.username + " " + $scope.gigSubmissionUser.userphone + " " + $scope.gigSubmissionUser.date + " " + $scope.gigSubmissionUser.comment);
+        }
     })
     .controller('subscribeController', function($scope){
     	$scope.title = "Subscribe";

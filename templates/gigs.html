@@ -6,18 +6,18 @@
 				<caption>Below you will find a list of our upcoming Gigs and engagement</caption>
 				<thead>
 					<tr>
-						<th>#</th>
+						<th>Item</th>
 						<th>Date</th>
 						<th>Venue</th>
 						<th>€Price</th>
 					</tr>
 				</thead>
 				<tbody>
-					<tr>
-						<td>1</td>
-						<td>28/1/2017</td>
-						<td>Brendan's 46th Birthday</td>
-						<td>€32</td>
+					<tr ng-repeat="Gig in Gigs">
+						<td>{{Gig.item}}</td>
+						<td>{{Gig.date}}</td>
+						<td>{{Gig.venue}}</td>
+						<td>{{Gig.Price}}</td>
 					</tr>
 				</tbody>
 		</table>

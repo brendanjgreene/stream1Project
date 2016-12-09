@@ -1,6 +1,6 @@
 angular.module('RouteControllers', [])
     .controller('HomeController', function($scope) {
-        $scope.title = "Welcome To Suzie and The Hepcats Home Page!";
+        $scope.title = "Welcome To Our Home Page!";
     })
     .controller('aboutUsController', function($scope){
     	$scope.title = "About Us";
@@ -34,9 +34,10 @@ angular.module('RouteControllers', [])
             console.log($scope.gigSubmissionUser.username + " " + $scope.gigSubmissionUser.userphone + " " + $scope.gigSubmissionUser.date + " " + $scope.gigSubmissionUser.comment);
         }
     })
-    .controller('subscribeController', function($scope){
+    .controller('subscribeController', function($scope, $location, UserAPIService){
     	$scope.title = "Subscribe";
         $scope.subscriptionUser = {};
+        var URL = "https://morning-castle-91468.herokuapp.com/";
 
         $scope.submitForm = function(){
             if ($scope.subscriptionForm.$valid){
@@ -44,8 +45,16 @@ angular.module('RouteControllers', [])
                 $scope.subscriptionUser.password = $scope.user.password;
                 $scope.subscriptionUser.email = $scope.user.email;
                 $scope.subscriptionUser.comment = $scope.user.comment;
+
+                UserAPIService.registerUser(URL + "accounts/register/", $scope.subscriptionUser).then(function(results){
+                    $scope.data = results.data;
+                    alert("You have successfully registered to Suzie and the Hep Cats Newsletter");
+                }).catch(function(err){
+                    alert("Sorry! Something Went Wrong!");
+                    console.log(err);
+                });
             }
 
-            console.log($scope.subscriptionUser.username + " " + $scope.subscriptionUser.password + " " + $scope.subscriptionUser.email + " " + $scope.subscriptionUser.comment);
-        }
+            /*console.log($scope.subscriptionUser.username + " " + $scope.subscriptionUser.password + " " + $scope.subscriptionUser.email + " " + $scope.subscriptionUser.comment);*/
+        };
     });

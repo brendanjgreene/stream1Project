@@ -14,11 +14,11 @@ angular.module('RouteControllers', [])
     .controller('gigsController', function($scope){
     	$scope.title = "Gigs";
         var Gigs = [
-            {item: "1", date: "2016-12-08", venue: "Grace's 11th B-Day Party", Price: 67},
-            {item: "2", date: "2017-01-28", venue: "Brendan's 46th Birthday Part", Price: 32},
-            {item: "3", date: "2017-04-14", venue: "Ruination Day, AKA Medb's Birthday", Price: 6},
-            {item: "4", date: "2017-08-20", venue: "Tess's 6th B-Day Party", Price: 167},
-            {item: "5", date: "2017-11-27", venue: "Caroline's 46thB-Day Party", Price: 674}
+            {item: "1", date: "2016-12-08", venue: "Grace's 11th B-Day Party", Price: '€67'},
+            {item: "2", date: "2017-01-28", venue: "Brendan's 46th Birthday Part", Price: '€32'},
+            {item: "3", date: "2017-04-14", venue: "Ruination Day, AKA Medb's Birthday", Price: '€6'},
+            {item: "4", date: "2017-08-20", venue: "Tess's 6th B-Day Party", Price: '€167'},
+            {item: "5", date: "2017-11-27", venue: "Caroline's 46thB-Day Party", Price: '€674'}
         ];
         $scope.Gigs = Gigs;
         $scope.gigSubmissionUser = {};

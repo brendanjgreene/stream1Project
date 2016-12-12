@@ -1,4 +1,4 @@
-angular.module('BandApp', ['ngRoute', 'RouteControllers', 'h1Directive', 'UserService']);
+angular.module('BandApp', ['ngRoute', 'RouteControllers', 'h1Directive', 'UserService', 'angular-storage']);
 
 angular.module('BandApp').config(function($routeProvider){
 	

@@ -1,5 +1,7 @@
 angular.module('BandApp', ['ngRoute', 'RouteControllers', 'h1Directive', 'UserService', 'angular-storage']);
 
+mySong = "assets/audio/ImABeliever.mp3";
+
 angular.module('BandApp').config(function($routeProvider){
 	
 	$routeProvider.when('/', {

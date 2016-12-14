@@ -13,15 +13,16 @@
 	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
 	<style type="text/css">
 		body {
-			color: green;
+			color: white;
 			background-image: url("assets/images/Cats-2014.2.jpeg");
 			background-size: cover;
 			padding-bottom: 70px;
 		}
 		.container {
-			background:rgba(255,255,255,0.2);
+			background:rgba(30, 10, 10, 0.79);
 			border-radius: 5px;
 			font: white;
+			padding-bottom: 50px;
 		}
 		.panel-heading {
 			background:rgba(255,255,255,0.5);
@@ -75,8 +76,11 @@
 			<a href="templates/youtube.html" class="btn btn-social-icon"><span class="fa" style="background:url(assets/images/youtube-logo-square-youtubelogo-20120605t021741-6mjjuus.jpg) no-repeat;background-size: contain"></span></a>
 			<br>Suzie and the Hep Cats
 			<br><audio id="myPlayer" autoplay controls="mute"><source src="assets/audio/ImABeliever.mp3" /><p>Your Browser doesn't support html5 audio</p></audio>
-				
 			</h1>
+			<div ng-view>
+														
+			</div>
+
 		</div>
 						<nav class="navbar navbar-inverse navbar-fixed-bottom">
 							<div class="container-fluid">
@@ -100,11 +104,6 @@
 								</div>
 							</div>
 						</nav>
-							<div class="container">
-								<div ng-view>
-														
-								</div>
-							</div>
 					
 
 	<script type="text/javascript" src='js/app.js'></script>

@@ -1,7 +1,4 @@
-angular.module('RouteControllers', [])
-    .controller('HomeController', function($scope) {
-        $scope.title = "Welcome To Our Home Page!";
-    })
+angular.module('BandApp')
     .controller('aboutUsController', function($scope){
     	$scope.title = "About Us";
     })

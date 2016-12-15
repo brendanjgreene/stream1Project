@@ -1,4 +1,4 @@
-angular.module('UserService', [])
+angular.module('BandApp')
 	.factory('UserAPIService', function($http){
 
 		UserAPIService = {
@@ -8,3 +8,4 @@ angular.module('UserService', [])
 		};
 		return UserAPIService;
 	});
+

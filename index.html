@@ -43,7 +43,8 @@
 										<li><a href="#/freebies">Freebies</a></li>
 										<li><a href="#/tracks">Tracks</a></li>
 										<li><a href="#/gigs">Gigs</a></li>
-										<li><a href="#/subscribe">Subscribe</a></li>
+										<li ng-hide='loggedin()'><a href="#/subscribe">Subscribe</a></li>
+										<li ng-show='loggedin()'><a href="#/logout">Log Out</a></li>
 									</ul>
 								</div>
 							</div>

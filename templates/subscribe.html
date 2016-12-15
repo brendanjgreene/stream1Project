@@ -19,11 +19,11 @@
                     <input type="email" name="email" class="form-control" ng-model="user.email" required>
                     <p ng-show="subscriptionForm.email.$pristine" class="help-block">Your email is required</p>
                 </div>
-                <div class="form-group">
+                <!--div class="form-group">
                     <label>Comment:</label>
                     <input type="textarea" name="comment" id="comment" rows="3" class="form-control" ng-model="user.comment" >
                     <p ng-show="subscriptionForm.comment.$pristine" class="help-block">Any other information you wish to share with us!</p>
-                </div>
+                </div-->
             
                 <button type="submit" class="btn btn-primary" ng-disabled="subscriptionForm.$invalid">Subscribe</button>
             </form>

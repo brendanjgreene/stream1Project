@@ -20,5 +20,7 @@
     "angular-route": "^1.5.9",
     "a0-angular-storage": "^0.0.15"
   },
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-social": "~5.1.1"
+  }
 }

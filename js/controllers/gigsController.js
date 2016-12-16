@@ -20,7 +20,7 @@ angular.module('BandApp')
                 $scope.gigSubmissionUser.date = $scope.user.date;
                 $scope.gigSubmissionUser.comment = $scope.user.comment;
             }
-
+            //this needs to be replaced with todoApi
             console.log($scope.gigSubmissionUser.username + " " + $scope.gigSubmissionUser.userphone + " " + $scope.gigSubmissionUser.date + " " + $scope.gigSubmissionUser.comment);
         }
         $scope.subscribed = function(){

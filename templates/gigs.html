@@ -24,9 +24,9 @@
 		</tbody>
 	</table>
 	<div class="panel-heading">
-		<button ng-show="loggedin()" "type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#gigReguest-modal">Make a Gig Request</button>
+		<button ng-show="subscribed()" "type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#gigReguest-modal">Make a Gig Request</button>
 
-		<a ng-hide="loggedin()" href="#../subscribe"><button  type="button" class="btn btn-primary btn-large">Subscribe First to make a Gig Request</button></a>
+		<a href="#/subscribe"><button ng-hide="subscribed()" type="button" class="btn btn-primary btn-large">Subscribe First to make a Gig Request</button></a>
 		
 		<div class="modal fade col-sm-6 items-center" id="gigReguest-modal" tabindex="-1" role="dialog" aria-labelledby="gigSubmisionForm-modal" aria-hidden="true">
 			<div class="modal-dailog">
@@ -65,4 +65,5 @@
 		</div>
 	</div>
 </div>
+
 

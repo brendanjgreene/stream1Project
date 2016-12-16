@@ -28,5 +28,9 @@ angular.module('BandApp').config(function($routeProvider) {
 		.when('/subscribe', {
 			templateUrl: "templates/subscribe.html",
 			controller: "subscribeController"
+		})
+		.when('/logout', {
+			templateUrl: "templates/logOut.html",
+			controller: "logoutController"
 		});
 });

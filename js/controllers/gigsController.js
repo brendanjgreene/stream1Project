@@ -1,5 +1,5 @@
 angular.module('BandApp')
-    .controller('gigsController', function($scope, $window, store){
+    .controller('gigsController', function($scope, $window, TodoAPIService, store){
     	$scope.title = "Gigs";
         var Gigs = [
             {item: "1", date: "2016-12-08", venue: "Grace's 11th B-Day Party", Price: '€67'},
@@ -11,21 +11,29 @@ angular.module('BandApp')
         $scope.Gigs = Gigs;
         $scope.gigSubmissionUser = {};
         var url = "https://morning-castle-91468.herokuapp.com/";
-        var username = store.get("username");
+
+        $scope.authToken = store.get('authToken');
+        $scope.username = store.get('username');
+        $scope.subscribed = function(){
+            if ($scope.username){
+                return true;
+            }
+        };
+ 
+        $scope.todos = [];
 
         $scope.submitForm = function(){
             if ($scope.gigSubmissionForm.$valid){
-                $scope.gigSubmissionUser.username = $scope.user.username;
-                $scope.gigSubmissionUser.userphone = $scope.user.userphone;
-                $scope.gigSubmissionUser.date = $scope.user.date;
-                $scope.gigSubmissionUser.comment = $scope.user.comment;
+                $scope.todo.username = $scope.username;
+                $scope.todos.push($scope.todo);
+            
+                TodoAPIService.createTodo(url + "todo/", $scope.todo, $scope.authToken).then(function(results){
+                    console.log(results)
+                }).catch(function(err){
+                    console.log(err)
+                });
             }
-            //this needs to be replaced with todoApi
-            console.log($scope.gigSubmissionUser.username + " " + $scope.gigSubmissionUser.userphone + " " + $scope.gigSubmissionUser.date + " " + $scope.gigSubmissionUser.comment);
-        }
-        $scope.subscribed = function(){
-            if (username){
-                return true;
-            }
+            //this needs to be replaced with TodoAPIService etc
+            //console.log($scope.gigSubmissionUser.username + " " + $scope.gigSubmissionUser.userphone + " " + $scope.gigSubmissionUser.date + " " + $scope.gigSubmissionUser.info);
         }
     });

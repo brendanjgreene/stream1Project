@@ -57,13 +57,34 @@
 								<input type="textarea" name="info" class="form-control" ng-model="user.info">
 								<p ng-show="gigSubmissionForm.info.$pristine" class="help-block">Please submit any other information you think we need to know here!!</p>
 							</div>
-							<button type="submit" class="btn btn-primary" ng-disabled="gigSubmissionForm.$invalid">Submit Gig Request</button>
+							<button type="submit" class="btn btn-primary" ng-disabled="gigSubmissionForm.$invalid" data-toggle="modal" data-target="#gigReguest-modal">Submit Gig Request</button>
 						</form>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
+	<div class="panel-heading" ng-show="subscribed()">Your Requested Gigs</div>
+	<table ng-show="subscribed()" class="table">
+    <thead>
+        <tr>
+            <td><strong>Contact Name</strong></td>
+            <td><strong>Contact Phone</strong></td>
+            <td><strong>Date Requested</strong></td>
+            <td><strong>Comments</strong></td>
+        </tr>
+    </thead>
+    <tr ng-repeat="todo in todos">
+        <td>{{todo.name}}</td>
+        <td>{{todo.phone}}</td>
+        <td>{{todo.date}}</td>
+        <td>{{todo.info}}</td>
+        <td>
+            <button ng-click="editTodo(todo.id)"><span class="glyphicon glyphicon-edit"></span></button>
+            <button ng-click="deleteTodo(todo.id)"><span class="glyphicon glyphicon-trash"></span></button>
+        </td>
+    </tr>
+</table>
 </div>
 
 

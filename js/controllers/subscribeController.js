@@ -26,7 +26,7 @@ angular.module('BandApp')
                 UserAPIService.callAPI(url + "accounts/register/", $scope.subscriptionUser).then(function(results){
                     $scope.data = results.data;
                     if ($scope.data.username == $scope.subscriptionUser.username && $scope.data.password == $scope.subscriptionUser.password){
-                        alert("You have are Subscribed to Suzie and the Hep Cats Newsletter");
+                        alert("Congratulations!!! You are Subscribed to Suzie and the Hep Cats Newsletter");
 
                         UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.data).then(function(results) {
                             $scope.token = results.data.token;

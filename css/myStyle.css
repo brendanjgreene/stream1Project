@@ -52,3 +52,6 @@ video {
 audio {
 	width: 70%;
 }
+li a{
+	text-align: right;
+}

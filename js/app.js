@@ -32,5 +32,9 @@ angular.module('BandApp').config(function($routeProvider) {
 		.when('/logout', {
 			templateUrl: "templates/logOut.html",
 			controller: "logoutController"
+		})
+		.when('/todo/edit/:id', {
+			templateUrl: "templates/edit-todo.html",
+			controller: "EditTodoController"
 		});
 });

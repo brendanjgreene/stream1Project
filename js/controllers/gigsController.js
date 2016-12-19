@@ -12,8 +12,8 @@ angular.module('BandApp')
         //$scope.gigSubmissionUser = {};
         var url = "https://morning-castle-91468.herokuapp.com/";
 
-        $scope.authToken = store.get('authToken');
-        $scope.username = store.get('username');
+        $scope.authToken = store.get("authToken");
+        $scope.username = store.get("username");
         $scope.subscribed = function(){
             if ($scope.username){
                 return true;
@@ -31,7 +31,7 @@ angular.module('BandApp')
 
         $scope.submitForm = function(){
             if ($scope.gigSubmissionForm.$valid){
-                $scope.todo.username = store.get('username');
+                $scope.todo.username = $scope.username;
                 $scope.todos.push($scope.todo);
             
                 TodoAPIService.createTodo(url + "todo/", $scope.todo, $scope.authToken).then(function(results){
@@ -43,3 +43,16 @@ angular.module('BandApp')
             }
         }
     });
+
+    $scope.editTodo = function (id) {
+        $location.path("/todo/edit/" + id);
+    };
+
+    $scope.deleteTodo = function(id){
+        TodoAPIService.deleteTodo(url + "todo/" + id, $scope.username, $scope.authToken).then(function(results){
+            $route.reload();
+            console.log(results);
+        }).catch(function(err){
+            console.log(err);
+        });
+    };

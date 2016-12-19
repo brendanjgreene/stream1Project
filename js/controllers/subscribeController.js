@@ -29,6 +29,7 @@ angular.module('BandApp')
                         alert("Congratulations!!! You are Subscribed to Suzie and the Hep Cats Newsletter");
 
                         UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.data).then(function(results) {
+                            $scope.data = results.data;
                             $scope.token = results.data.token;
                             store.set('username', $scope.subscriptionUser.username);
                             store.set('authToken', $scope.token);
@@ -48,7 +49,9 @@ angular.module('BandApp')
                         store.set('authToken', $scope.token);
                         $location.path("/gigs");
                         $window.location.reload();
-                    })
+                    }).catch(function(){//
+                        console.log(err);//
+                    })//
                 });
             }
         }

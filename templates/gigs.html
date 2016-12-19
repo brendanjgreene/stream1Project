@@ -39,22 +39,22 @@
 						<form name="gigSubmissionForm" ng-submit="submitForm()" novalidate>
 							<div class="form-group">
 								<label>Contact Name:</label>
-								<input type="text" name="name" class="form-control" ng-model="user.username" required>
-								<p ng-show="gigSubmissionForm.name.$pristine" class="help-block">Your Name Please</p>
+								<input type="text" name="title" class="form-control" ng-model="todo.title" required>
+								<p ng-show="gigSubmissionForm.title.$pristine" class="help-block">Your Name Please</p>
 							</div>
 							<div class="form-group">
 								<label>Contact Number:</label>
-								<input type="tel" name="userphone" class="form-control" ng-model="user.userphone" required>
-								<p ng-show="gigSubmissionForm.userphone.$pristine" class="help-block">Your Phone number Please</p>
+								<input type="tel" name="description" class="form-control" ng-model="todo.description" required>
+								<p ng-show="gigSubmissionForm.description.$pristine" class="help-block">Your Phone number Please</p>
 							</div>
 							<div class="form-group">
 								<label>Date:</label>
-								<input type="date" name="date" class="form-control" ng-model="user.date" required>
+								<input type="date" name="date" class="form-control" ng-model="todo.date" required>
 								<p ng-show="gigSubmissionForm.date.$pristine" class="help-block">The Date You are requesting a gig for!</p>
 							</div>
 							<div class="form-group">
 								<label>Comment</label>
-								<input type="textarea" name="info" class="form-control" ng-model="user.info">
+								<input type="textarea" name="info" class="form-control" ng-model="todo.info">
 								<p ng-show="gigSubmissionForm.info.$pristine" class="help-block">Please submit any other information you think we need to know here!!</p>
 							</div>
 							<button type="submit" class="btn btn-primary" ng-disabled="gigSubmissionForm.$invalid" data-toggle="modal" data-target="#gigReguest-modal">Submit Gig Request</button>
@@ -66,25 +66,25 @@
 	</div>
 	<div class="panel-heading" ng-show="subscribed()">Your Requested Gigs</div>
 	<table ng-show="subscribed()" class="table">
-    <thead>
-        <tr>
-            <td><strong>Contact Name</strong></td>
-            <td><strong>Contact Phone</strong></td>
-            <td><strong>Date Requested</strong></td>
-            <td><strong>Comments</strong></td>
-        </tr>
-    </thead>
-    <tr ng-repeat="todo in todos">
-        <td>{{todo.name}}</td>
-        <td>{{todo.phone}}</td>
-        <td>{{todo.date}}</td>
-        <td>{{todo.info}}</td>
-        <td>
-            <button ng-click="editTodo(todo.id)"><span class="glyphicon glyphicon-edit"></span></button>
-            <button ng-click="deleteTodo(todo.id)"><span class="glyphicon glyphicon-trash"></span></button>
-        </td>
-    </tr>
-</table>
+    	<thead>
+    	    <tr>
+    	        <td><strong>Contact Name</strong></td>
+    	        <td><strong>Contact Phone</strong></td>
+    	        <td><strong>Date Requested</strong></td>
+    	        <td><strong>Comments</strong></td>
+    	    </tr>
+    	</thead>
+    	<tr ng-repeat="todo in todos">
+    	    <td>{{todo.title}}</td>
+    	    <td>{{todo.description}}</td>
+    	    <td>{{todo.date}}</td>
+    	    <td>{{todo.info}}</td>
+    	    <td>
+    	        <button ng-click="editTodo(todo.id)"><span class="glyphicon glyphicon-edit"></span></button>
+    	        <button ng-click="deleteTodo(todo.id)"><span class="glyphicon glyphicon-trash"></span></button>
+    	    </td>
+    	</tr>
+	</table>
 </div>
 
 

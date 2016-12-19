@@ -6,7 +6,7 @@
             <form name="subscriptionForm" ng-submit="submitForm()" novalidate>
                 <div class="form-group">
                     <label>Name:</label>
-                    <input type="text" name="name" class="form-control" ng-model="user.username" required>
+                    <input type="text" name="name" class="form-control" ng-model="user.username" placeholder="USERNAME" required>
                     <p ng-show="subscriptionForm.name.$pristine" class="help-block">Your username is required</p>
                 </div>
                 <div class="form-group">

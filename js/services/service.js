@@ -8,4 +8,3 @@ angular.module('BandApp')
 		}
 		return UserAPIService;
 	});
-

@@ -5,3 +5,4 @@ window.addEventListener("play", function(evt){
 			}
 			window.$_currentlyPlaying = evt.target;
 		}, true)
+

@@ -1,16 +1,17 @@
 angular.module('BandApp')
-    .controller('gigsController', function($scope, $location, $route, TodoAPIService, store){
+    .controller('gigsController', function($scope, $location, $route, GigAPIService, store){
     	$scope.title = "Gigs";
-        var Gigs = [
+        $scope.BookedGigs = [
             {item: "1", date: "2016-12-08", venue: "Grace's 11th B-Day Party", Price: '€67'},
             {item: "2", date: "2017-01-28", venue: "Brendan's 46th Birthday Part", Price: '€32'},
             {item: "3", date: "2017-04-14", venue: "Ruination Day, AKA Medb's B-day", Price: '€6'},
             {item: "4", date: "2017-08-20", venue: "Tess's 6th B-Day Party", Price: '€167'},
             {item: "5", date: "2017-11-27", venue: "Caroline's 46thB-Day Party", Price: '€674'}
         ];
-        $scope.Gigs = Gigs;
-        //$scope.gigSubmissionUser = {};
+        $scope.gigs = [];
+        
         var url = "https://morning-castle-91468.herokuapp.com/";
+        var username = store.get("username");
 
         $scope.authToken = store.get("authToken");
         $scope.username = store.get("username");
@@ -19,40 +20,40 @@ angular.module('BandApp')
                 return true;
             }
         };
- 
-        $scope.todos = [];
+        
+        $scope.editGig = function (id){
+            $location.path("/gigs/edit/" + id);
+        };
 
-        TodoAPIService.getTodos(url + "todo/", $scope.username, $scope.authToken).then(function(results){
-            $scope.todos = results.data;
-            console.log($scope.todos);
+        $scope.deleteGig = function(id){
+            GigAPIService.deleteGig(url + "todo/" + id, $scope.username, $scope.authToken).then(function(results){
+                console.log(results);
+            }).catch(function(err){
+                console.log(err);
+            });
+        };
+ 
+        GigAPIService.getGigs(url + "todo/", $scope.username, $scope.authToken).then(function(results){
+            $scope.gigs = results.data;
+            console.log($scope.gigs);
         }).catch(function(err){
             console.log(err);
         });
 
         $scope.submitForm = function(){
             if ($scope.gigSubmissionForm.$valid){
-                $scope.todo.username = $scope.username;
-                $scope.todos.push($scope.todo);
+                $scope.gig.username = $scope.username;
+                $scope.gig.status = "Doing";
+                //$scope.gig.id = Math.random() + 1;
+                //$scope.gig.delete($scope.gig.date);
+                console.log($scope.gig);
             
-                TodoAPIService.createTodo(url + "todo/", $scope.todo, $scope.authToken).then(function(results){
+                GigAPIService.createGig(url + "todo/", $scope.gig, $scope.authToken).then(function(results){
                     console.log(results);
-                    $route.reload()
+                    $scope.gigs.push($scope.gig);
                 }).catch(function(err){
                     console.log(err);
                 });
             }
         }
     });
-
-    $scope.editTodo = function (id) {
-        $location.path("/todo/edit/" + id);
-    };
-
-    $scope.deleteTodo = function(id){
-        TodoAPIService.deleteTodo(url + "todo/" + id, $scope.username, $scope.authToken).then(function(results){
-            $route.reload();
-            console.log(results);
-        }).catch(function(err){
-            console.log(err);
-        });
-    };

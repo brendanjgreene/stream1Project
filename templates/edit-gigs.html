@@ -1,0 +1,23 @@
+<form name="edit-gigsForm" ng-submit="submitForm()" novalidate>
+    <div class="form-group">
+        <label>Title</label>
+        <input type="text" name="title" class="form-control" ng-model="gig.title" placeholder="figure out how to displace current title here" required>
+        <p ng-show="edit-gigsForm.title.$pristine" class="help-block">A title is required</p>
+    </div>
+    <div class="form-group">
+        <label>Description</label>
+        <input type="date" name="description" class="form-control" ng-model="gig.description" placeholder="figure out how to displace current title here" required>
+        <p ng-show="edit-gigsForm.description.$pristine" class="help-block">A description is required</p>
+    </div>
+    <div class="form-group">
+        <label>Status</label>
+            <select class="form-control" name="status" ng-model="gig.status">
+                <option value="Todo">Todo</option>
+                <option value="Doing">Doing</option>
+                <option value="Done">Done</option>
+            </select>
+    </div>
+        <button type="submit" class="btn btn-primary">Save Changes</button>
+        <a href="#/gigs"><button class="btn btn-danger pull-right" >Cancel</button></a>
+    </div>
+</form>

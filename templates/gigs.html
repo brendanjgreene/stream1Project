@@ -1,7 +1,7 @@
 <div h1-header></div>
 <h3 class="text-center">Footage of Our Recent Gig
 <br>
-	<video controls="controls" autoplay><source src="assets/video/TheMonkees.mp4" type="video/mp4"></video>
+	<video controls="controls" autoplay><source src="assets/video/milk.m4v" type="video/mp4"></video>
 </h3>
 <div class="panel">
 	<div class="panel-heading">Upcoming Gigs</div>
@@ -15,7 +15,7 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr ng-repeat="Gig in Gigs">
+			<tr ng-repeat="Gig in BookedGigs">
 				
 				<td>{{Gig.date}}</td>
 				<td>{{Gig.venue}}</td>
@@ -26,7 +26,18 @@
 	<div class="panel-heading">
 		<button ng-show="subscribed()" "type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#gigReguest-modal">Make a Gig Request</button>
 
-		<a href="#/subscribe"><button ng-hide="subscribed()" type="button" class="btn btn-primary btn-large">Subscribe First to make a Gig Request</button></a>
+		<div ng-hide="subscribed()">
+			
+			<div class="alert alert-info">
+			    <strong>Info!</strong> If you want to make a gig Request you should either Subscribe or Login.
+			</div>
+			<br>
+
+			<a href="#/subscribe"><button type="button" class="btn btn-primary btn-large">Subscribe</button></a>
+			
+			<a href="#/login"><button type="button" class="btn btn-primary btn-large pull-right">Login</button></a>
+		</div>
+
 		
 		<div class="modal fade col-sm-6 items-center" id="gigReguest-modal" tabindex="-1" role="dialog" aria-labelledby="gigSubmisionForm-modal" aria-hidden="true">
 			<div class="modal-dailog">
@@ -39,22 +50,22 @@
 						<form name="gigSubmissionForm" ng-submit="submitForm()" novalidate>
 							<div class="form-group">
 								<label>Contact Name:</label>
-								<input type="text" name="title" class="form-control" ng-model="todo.title" required>
+								<input type="text" name="title" class="form-control" ng-model="gig.title" required>
 								<p ng-show="gigSubmissionForm.title.$pristine" class="help-block">Your Name Please</p>
 							</div>
 							<div class="form-group">
 								<label>Contact Number:</label>
-								<input type="tel" name="description" class="form-control" ng-model="todo.description" required>
+								<input type="tel" name="number" class="form-control" ng-model="gig.number" required>
 								<p ng-show="gigSubmissionForm.description.$pristine" class="help-block">Your Phone number Please</p>
 							</div>
 							<div class="form-group">
 								<label>Date:</label>
-								<input type="date" name="date" class="form-control" ng-model="todo.date" required>
+								<input type="date" name="description" class="form-control" ng-model="gig.description" required>
 								<p ng-show="gigSubmissionForm.date.$pristine" class="help-block">The Date You are requesting a gig for!</p>
 							</div>
 							<div class="form-group">
 								<label>Comment</label>
-								<input type="textarea" name="info" class="form-control" ng-model="todo.info">
+								<input type="textarea" name="info" class="form-control" ng-model="gig.info">
 								<p ng-show="gigSubmissionForm.info.$pristine" class="help-block">Please submit any other information you think we need to know here!!</p>
 							</div>
 							<button type="submit" class="btn btn-primary" ng-disabled="gigSubmissionForm.$invalid" data-toggle="modal" data-target="#gigReguest-modal">Submit Gig Request</button>
@@ -68,20 +79,19 @@
 	<table ng-show="subscribed()" class="table">
     	<thead>
     	    <tr>
-    	        <td><strong>Contact Name</strong></td>
-    	        <td><strong>Contact Phone</strong></td>
-    	        <td><strong>Date Requested</strong></td>
-    	        <td><strong>Comments</strong></td>
+    	        <td><strong>User Name</strong></td>
+    	        <td><strong>Date</strong></td>
+    	        <td><strong>Status</strong></td>
+    	        <td><strong>Actions</strong></td>
     	    </tr>
     	</thead>
-    	<tr ng-repeat="todo in todos">
-    	    <td>{{todo.title}}</td>
-    	    <td>{{todo.description}}</td>
-    	    <td>{{todo.date}}</td>
-    	    <td>{{todo.info}}</td>
+    	<tr ng-repeat="gig in gigs">
+    	    <td>{{gig.username}}</td>
+    	    <td>{{gig.description}}</td>
+    	    <td>{{gig.status}}</td>
     	    <td>
-    	        <button ng-click="editTodo(todo.id)"><span class="glyphicon glyphicon-edit"></span></button>
-    	        <button ng-click="deleteTodo(todo.id)"><span class="glyphicon glyphicon-trash"></span></button>
+    	        <button ng-click="editGig(gig.id)"><span class="glyphicon glyphicon-edit"></span></button>
+    	        <button ng-click="deleteGig(gig.id)"><span class="glyphicon glyphicon-trash"></span></button>
     	    </td>
     	</tr>
 	</table>

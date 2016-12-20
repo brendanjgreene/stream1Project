@@ -1,4 +1,4 @@
-angular.module('BandApp', [
+angular.module('BandApp', [ //clean
     'ngRoute',
     'angular-storage'
 ]);
@@ -33,8 +33,12 @@ angular.module('BandApp').config(function($routeProvider) {
 			templateUrl: "templates/logOut.html",
 			controller: "logoutController"
 		})
-		.when('/todo/edit/:id', {
-			templateUrl: "templates/edit-todo.html",
-			controller: "EditTodoController"
+		.when('/gigs/edit/:id', {
+			templateUrl: "templates/edit-gigs.html",
+			controller: "EditGigsController"
+		})
+		.when('/login', {
+			templateUrl: "templates/login.html",
+			controller: "loginController"
 		});
 });

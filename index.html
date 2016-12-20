@@ -38,13 +38,15 @@
 								</div>
 								<div class="collapse navbar-collapse" id="myNavbar">
 									<ul class="nav navbar-nav navbar-right" ng-controller="gigsController" ng-cloak>
-										<li><a href="#/">Home</a></li>
+										<li ng-show="subscribed()"><a href="#/">Hello {{username}}!</a></li>
+										<li ng-hide="subscribed()"><a href="#/">Home</a></li>
 										<li><a href="#/aboutUs">About Us</a></li>
 										<li><a href="#/freebies">Freebies</a></li>
 										<li><a href="#/tracks">Tracks</a></li>
 										<li><a href="#/gigs">Gigs</a></li>
 										<li ng-hide="subscribed()"><a href="#/subscribe">Subscribe</a></li>
 										<li ng-show="subscribed()"><a href="#/logout">Log Out</a></li>
+										<li ng-hide="subscribed()"><a href="#/login">Log In</a></li>
 									</ul>
 								</div>
 							</div>
@@ -66,9 +68,11 @@
 	<script type="text/javascript" src='js/controllers/gigsController.js'></script>
 	<script type="text/javascript" src='js/controllers/subscribeController.js'></script>
 	<script type="text/javascript" src='js/controllers/logoutController.js'></script>
+	<script type="text/javascript" src='js/controllers/loginController.js'></script>
+	<script type="text/javascript" src='js/controllers/EditGigsController.js'></script>
 
 	<script type="text/javascript" src='js/services/service.js'></script>
-	<script type="text/javascript" src='js/services/todoServices.js'></script>
+	<script type="text/javascript" src='js/services/GigServices.js'></script>
 	<script type="text/javascript" src='js/directive.js'></script>
 
 	<script type="text/javascript" src='js/media.js'></script>

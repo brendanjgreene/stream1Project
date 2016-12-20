@@ -55,3 +55,6 @@ audio {
 li a{
 	text-align: right;
 }
+td > button {
+	color: black;
+}

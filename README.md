@@ -9,12 +9,20 @@ This App will be a band website
 ## Features
 
 ### Existing Features
-- None yet!
+- Subscribe to newsletter
+- Log in
+- log Out
+- Gig Request
+- See upcoming gigs
+- preview tracks and videos
+- download free tracks
+- links to amazon and itunes for purchasing
+- social links to Facebook, Vimeo, YouTube and Twitter
 
 ### Features Left to implement
-- Complete a working prototype of a website for a band. Use the wireframes you created in the UX lesson as a starting point. Use your own assets or you can use the assets zip file below.
-
-- The band is a ‘Swing/Jive’ band and have around 20 years experience of performing live at numerous events throughout Ireland. You have been given the requirements after interviews with the clients representatives.   The requirements are:
+- menu collapse as a directive
+- bootstrap tab
+- alert boxes in bootsrap style
 
 - The band requires a web site to showcase their music and publicise their availability for gigs.
 

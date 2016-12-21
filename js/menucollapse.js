@@ -1,4 +1,4 @@
-$(document).on('click', function(event){
+$((this).window).on('click', function(event){
   var $clickedOn = $(event.target),
   $collapsableItems = $('.collapse'),
   isToggleButton = ($clickedOn.closest('.navbar-toggle').length == 1),
@@ -10,4 +10,5 @@ $(document).on('click', function(event){
       $(this).collapse('hide');
     });
   }
+  reload();
 });

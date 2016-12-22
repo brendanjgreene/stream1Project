@@ -24,7 +24,7 @@
 		</tbody>
 	</table>
 	<div class="panel-heading">
-		<button ng-show="subscribed()" "type="button" class="btn btn-primary btn-large" data-toggle="modal" data-target="#gigReguest-modal">Make a Gig Request</button>
+		<button ng-show="subscribed()" "type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#gigReguest-modal">Make a Gig Request</button>
 
 		<div ng-hide="subscribed()">
 			
@@ -33,9 +33,9 @@
 			</div>
 			<br>
 
-			<a href="#/subscribe"><button type="button" class="btn btn-primary btn-large">Subscribe</button></a>
+			<a href="#/subscribe"><button type="button" class="btn btn-primary btn-lg">Subscribe</button></a>
 			
-			<a href="#/login"><button type="button" class="btn btn-primary btn-large pull-right">Login</button></a>
+			<a href="#/login"><button type="button" class="btn btn-primary btn-lg pull-right">Login</button></a>
 		</div>
 
 		
@@ -68,7 +68,7 @@
 								<input type="textarea" name="info" class="form-control" ng-model="gig.info">
 								<p ng-show="gigSubmissionForm.info.$pristine" class="help-block">Please submit any other information you think we need to know here!!</p>
 							</div>
-							<button type="submit" class="btn btn-primary" ng-disabled="gigSubmissionForm.$invalid" data-toggle="modal" data-target="#gigReguest-modal">Submit Gig Request</button>
+							<button type="submit" class="btn btn-primary btn-lg" ng-disabled="gigSubmissionForm.$invalid" data-toggle="modal" data-target="#gigReguest-modal">Submit Gig Request</button>
 						</form>
 					</div>
 				</div>

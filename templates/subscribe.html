@@ -1,5 +1,28 @@
 <div h1-header></div>
-
+<div class="alert alert-success" id="congratsAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="false"> Dismiss &times;</span>
+    </button>
+    <strong>Congratulations!!!</strong>  You are Subscribed to Suzie and the Hep Cats Newsletter!
+</div>
+<div class="alert alert-info" id="heyAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"> Login &times;</span>
+    </button>
+    <strong>Hey! You may already be subscribed</strong>  We Can try to log you in if you wish!
+</div>
+<div class="alert alert-info" id="OppsAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"> Dismiss &times;</span>
+    </button>
+    <strong>Opps!</strong> Something is wrong!
+</div>
+<div class="alert alert-info" id="welcomeBAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"> Go to Gigs page &times;</span>
+    </button>
+    <strong>Welcome Back!</strong> You are logged in!
+</div>
     <div class="container-fluid">
         <div class="col-sm-12">
         <p>Please submit your name and email address to recieve or newsletter via email.  We send email a minimum of once a month.  Including upcoming gigs and information on our latest tracks and downloads as well as other merchandise.</p>
@@ -19,13 +42,8 @@
                     <input type="email" name="email" class="form-control" ng-model="user.email" required>
                     <p ng-show="subscriptionForm.email.$pristine" class="help-block">Your email is required</p>
                 </div>
-                <!--div class="form-group">
-                    <label>Comment:</label>
-                    <input type="textarea" name="comment" id="comment" rows="3" class="form-control" ng-model="user.comment" >
-                    <p ng-show="subscriptionForm.comment.$pristine" class="help-block">Any other information you wish to share with us!</p>
-                </div-->
             
-                <button type="submit" class="btn btn-primary" ng-disabled="subscriptionForm.$invalid">Subscribe</button>
+                <button type="submit" class="btn btn-primary btn-lg" ng-disabled="subscriptionForm.$invalid">Subscribe</button>
             </form>
         </div>
 

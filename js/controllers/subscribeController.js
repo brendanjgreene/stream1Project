@@ -26,32 +26,37 @@ angular.module('BandApp')
                 UserAPIService.callAPI(url + "accounts/register/", $scope.subscriptionUser).then(function(results){
                     $scope.data = results.data;
                     if ($scope.data.username == $scope.subscriptionUser.username && $scope.data.password == $scope.subscriptionUser.password){
-                        alert("Congratulations!!! You are Subscribed to Suzie and the Hep Cats Newsletter");
-
-                        UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.data).then(function(results) {
-                            $scope.data = results.data;
-                            $scope.token = results.data.token;
-                            store.set("username", $scope.subscriptionUser.username);
-                            store.set("authToken", $scope.token);
-                            $location.path("/gigs");
-                            $window.location.reload();
-                        }).catch(function(err){
-                            console.log(err);
+                        //alert("Congratulations!!! You are Subscribed to Suzie and the Hep Cats Newsletter");
+                        $('#congratsAlert').css("display", "block").on('closed.bs.alert', function () {
+                            UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.data).then(function(results) {
+                                $scope.data = results.data;
+                                $scope.token = results.data.token;
+                                store.set("username", $scope.subscriptionUser.username);
+                                store.set("authToken", $scope.token);
+                                $location.path("/gigs");
+                                $window.location.reload();
+                            }).catch(function(err){
+                                console.log(err);
+                            });
                         });
                     }
                 }).catch(function(err) {
-                    alert("you may already be subscribed, We will attemp to log you in, instead!");
-                    UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.subscriptionUser).then(function(results){
-                        $scope.data = results.data;
-                        alert("Welcome Back!");
-                        $scope.token = results.data.token;
-                        store.set("username", $scope.subscriptionUser.username);
-                        store.set("authToken", $scope.token);
-                        $location.path("/gigs");
-                        $window.location.reload();
-                    }).catch(function(){//
-                        console.log(err);//
-                    })//
+                    //alert("you may already be subscribed, We will attemp to log you in, instead!");
+                    $('#heyAlert').css("display", "block").on('closed.bs.alert', function (){
+                        UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.subscriptionUser).then(function(results){
+                            $scope.data = results.data;
+                            //alert("Welcome Back!");
+                            $('#welcomeBAlert').css("display", "block").on('closed.bs.alert', function () {
+                                $scope.token = results.data.token;
+                                store.set("username", $scope.subscriptionUser.username);
+                                store.set("authToken", $scope.token);
+                                $location.path("/gigs");
+                                $window.location.reload();
+                            });
+                        }).catch(function(){//
+                            console.log(err);//
+                        });//
+                    });
                 });
             }
         }

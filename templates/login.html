@@ -1,5 +1,16 @@
 <div h1-header></div>
-
+<div class="alert alert-info alert-dismissible fade in" id="welcomeAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true"> Go to Gigs page &times;</span>
+    </button>
+    <strong>Welcome Back!</strong> You are logged in!
+</div>
+<div class="alert alert-danger alert-dismissible fade in" id="subscribeAlert" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+        <span aria-hidden="true"> Subscribe &times;</span>
+    </button>
+    <strong>Sorry!</strong> You need to Subscribe before you Login
+</div>
     <div class="container-fluid">
         <div class="col-sm-12">
         <p>Please log back in</p>
@@ -17,7 +28,7 @@
                     <input type="email" name="email" class="form-control" ng-model="user.email" placeholder="OPTIONAL: UPDATE YOUR EMAIL">
                 </div>
             
-                <button type="submit" class="btn btn-primary">Login</button>
+                <button type="submit" class="btn btn-primary btn-lg">Login</button>
             </form>
         </div>
 

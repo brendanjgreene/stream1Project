@@ -46,6 +46,9 @@ caption, h4{
 	background-image: url(../assets/images/Cats-2014.2.6.jpg);
 	background-size: contain;
 }
+.alert{
+	display: none;
+}
 video {
 	width: 70%;
 }

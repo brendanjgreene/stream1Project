@@ -27,8 +27,10 @@ angular.module('BandApp')
                     $scope.data = results.data;
                     if ($scope.data.username == $scope.subscriptionUser.username && $scope.data.password == $scope.subscriptionUser.password){
                         //alert("Congratulations!!! You are Subscribed to Suzie and the Hep Cats Newsletter");
+                        $(".fog").css("display", "block");
                         $('#congratsAlert').css("display", "block").on('closed.bs.alert', function () {
                             UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.data).then(function(results) {
+                                $(".fog").css("display", "initial");
                                 $scope.data = results.data;
                                 $scope.token = results.data.token;
                                 store.set("username", $scope.subscriptionUser.username);
@@ -42,20 +44,26 @@ angular.module('BandApp')
                     }
                 }).catch(function(err) {
                     //alert("you may already be subscribed, We will attemp to log you in, instead!");
+                    $(".fog").css("display", "block");
                     $('#heyAlert').css("display", "block").on('closed.bs.alert', function (){
                         UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.subscriptionUser).then(function(results){
                             $scope.data = results.data;
                             //alert("Welcome Back!");
                             $('#welcomeBAlert').css("display", "block").on('closed.bs.alert', function () {
+                                $(".fog").css("display", "initial");
                                 $scope.token = results.data.token;
                                 store.set("username", $scope.subscriptionUser.username);
                                 store.set("authToken", $scope.token);
                                 $location.path("/gigs");
                                 $window.location.reload();
                             });
-                        }).catch(function(){//
-                            console.log(err);//
-                        });//
+                        }).catch(function(){
+                            console.log(err);
+                            $(".fog").css("display", "block");
+                            $("#OppsAlert").css("display", "block").on('closed.bs.alert', function () {
+                                $(".fog").css("display", "initial");
+                            });
+                        });
                     });
                 });
             }

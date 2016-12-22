@@ -15,23 +15,28 @@ angular.module('BandApp')
             $scope.LoginUser.password = $scope.user.password;
             $scope.LoginUser.email = $scope.user.email;
 
-                UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.LoginUser).then(function(results){
-                    $scope.data = results.data;
-                    alert("Welcome Back!");
-                    $()
+            UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.LoginUser).then(function(results){
+                $scope.data = results.data;
+                //alert("Welcome Back!");
+                $(".fog").css("display", "block");
+                $('#welcomeBAlert').css("display", "block").on('closed.bs.alert', function () {
+                    $(".fog").css("display", "initial");
                     $scope.token = results.data.token;
                     store.set("username", $scope.LoginUser.username);
                     store.set("authToken", $scope.token);
                     $location.path("/gigs");
                     $window.location.reload();
-
-                }).catch(function(err){
-                	if(!store.get("username")){
-                		alert("You need to Subscribe before you Login");
-                        $location.path("/subscribe");
-                	}
                 });
-            
+            }).catch(function(err){
+            	if(!store.get("username")){
+            		//alert("You need to Subscribe before you Login");
+                    $(".fog").css("display", "block");
+                    $('#subscribeAlert').css("display", "block").on('closed.bs.alert', function () {
+                        $(".fog").css("display", "initial");
+                        $location.path("/subscribe");
+                        $window.location.reload();
+                    });
+            	}
+            });
         }
-
     })

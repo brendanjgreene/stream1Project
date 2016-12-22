@@ -18,6 +18,7 @@ angular.module('BandApp')
                 UserAPIService.callAPI(url + "accounts/api-token-auth/", $scope.LoginUser).then(function(results){
                     $scope.data = results.data;
                     alert("Welcome Back!");
+                    $()
                     $scope.token = results.data.token;
                     store.set("username", $scope.LoginUser.username);
                     store.set("authToken", $scope.token);
@@ -26,8 +27,8 @@ angular.module('BandApp')
 
                 }).catch(function(err){
                 	if(!store.get("username")){
-                		$location.path("/subscribe");
                 		alert("You need to Subscribe before you Login");
+                        $location.path("/subscribe");
                 	}
                 });
             

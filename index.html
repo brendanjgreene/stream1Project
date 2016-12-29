@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html ng-app='BandApp'>
 <head>
-	<meta charset="UTF-8">
 	<title>Suzie and the Hep Cats</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap-social/bootstrap-social.css">
 	<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
@@ -11,38 +12,38 @@
 </head>
 
 <body>
-<div class="fog">
-	<div class="alert alert-success" id="congratsAlert" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="false"> Dismiss &times;</span>
-    </button>
-    <strong>Congratulations!!!</strong>  You are Subscribed to Suzie and the Hep Cats Newsletter!
-</div>
-<div class="alert alert-info" id="heyAlert" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true"> Login &times;</span>
-    </button>
-    <strong>Hey! You may already be subscribed</strong>  We Can try to log you in if you wish!
-</div>
-<div class="alert alert-info" id="OppsAlert" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true"> Dismiss &times;</span>
-    </button>
-    <strong>Opps!</strong> Something is wrong!
-</div>
-<div class="alert alert-info" id="welcomeBAlert" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true"> Go to Gigs page &times;</span>
-    </button>
-    <strong>Welcome Back!</strong> You are logged in!
-</div>
-<div class="alert alert-danger" id="subscribeAlert" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true"> Subscribe &times;</span>
-    </button>
-    <strong>Sorry!</strong> You need to Subscribe before you Login
-</div>
-</div>
+	<div class="fog">
+		<div class="alert alert-success" id="congratsAlert" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="false"> Dismiss &times;</span>
+			</button>
+			<strong>Congratulations!!!</strong>  You are Subscribed to Suzie and the Hep Cats Newsletter!
+		</div>
+		<div class="alert alert-info" id="heyAlert" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true"> Login &times;</span>
+			</button>
+			<strong>Hey! You may already be subscribed</strong>  We Can try to log you in if you wish!
+		</div>
+		<div class="alert alert-info" id="OppsAlert" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true"> Dismiss &times;</span>
+			</button>
+			<strong>Opps!</strong> Something is wrong!
+		</div>
+		<div class="alert alert-info" id="welcomeBAlert" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true"> Go to Gigs page &times;</span>
+			</button>
+			<strong>Welcome Back!</strong> You are logged in!
+		</div>
+		<div class="alert alert-danger" id="subscribeAlert" role="alert">
+			<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+				<span aria-hidden="true"> Subscribe &times;</span>
+			</button>
+			<strong>Sorry!</strong> You need to Subscribe before you Login
+		</div>
+	</div>
 	<div class="jumbotron jumbotron-fluid">
 		<h4 class="text-center">
 			<a href="templates/vimeo.html" class="btn btn-social-icon btn-vimeo"><span class="fa fa-vimeo"></span></a>
@@ -53,68 +54,88 @@
 		</h4>
 		<h1 class="text-center">Suzie and the Hepcats</h1>
 	</div>
-		<div class="container">
-			<div ng-view>
-														
-			</div>
+	<div class="container">
+		<div ng-view>
+
 		</div>
-							<div>
-								<nav class="navbar navbar-inverse navbar-fixed-bottom ">
-									<div class="container-fluid">
-										<div class="navbar-heg
-ader">
-											<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-												<span class="icon-bar"> </span>
-												<span class="icon-bar"> </span>
-												<span class="icon-bar"> </span>
-											</button>
-											<a class="navbar-brand" href="#/">Suzie and The Hep Cats</a>
-										</div>
-										<div class="collapse navbar-collapse" id="myNavbar">
-											<ul class="nav navbar-nav navbar-right" ng-controller="gigsController" ng-cloak>
-												<li ng-show="subscribed()"><a href="#/">Hello {{username}}!</a></li>
-												<li ng-hide="subscribed()"><a href="#/">Home</a></li>
-												<li><a href="#/aboutUs">About Us</a></li>
-												<li><a href="#/freebies">Freebies</a></li>
-												<li><a href="#/tracks">Tracks</a></li>
-												<li><a href="#/gigs">Gigs</a></li>
-												<li ng-hide="subscribed()"><a href="#/subscribe">Subscribe</a></li>
-												<li ng-show="subscribed()"><a href="#/logout">Log Out</a></li>
-												<li ng-hide="subscribed()"><a href="#/login">Log In</a></li>
-											</ul>
-										</div>
-									</div>
-								</nav>
-							</div>
-						
+	</div>
+	<!--div ng-click="currentTpl='/tpl.html'" id="tpl-link"-->
+
+        <nav class="navbar navbar-inverse navbar-fixed-bottom ">
+        	<div class="container-fluid">
+        		<div class="navbar-header">
+        			<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        				<!--span class="icon-bar"> </span>
+        				<span class="icon-bar"> </span>
+        				<span class="icon-bar"> </span-->
+        				<span class="sr-only">Toggle navigation</span>Menu <i class="fa fa-bars"></i>
+        			</button>
+        			<a class="navbar-brand" href="#/">Suzie and The Hep Cats</a>
+        		</div>
+        		<div class="collapse navbar-collapse" id="myNavbar">
+        			<ul class="nav navbar-nav navbar-right" ng-controller="gigsController" ng-cloak>
+        				<li ng-show="subscribed()"><a href="#/">Hello {{username}}!</a></li>
+        				<li ng-hide="subscribed()"><a href="#/">Home</a></li>
+        				<li><a href="#/aboutUs">About Us</a></li>
+        				<li><a href="#/freebies">Freebies</a></li>
+        				<li><a href="#/tracks">Tracks</a></li>
+        				<li><a href="#/gigs">Gigs</a></li>
+        				<li ng-hide="subscribed()"><a href="#/subscribe">Subscribe</a></li>
+        				<li ng-show="subscribed()"><a href="#/logout">Log Out</a></li>
+        				<li ng-hide="subscribed()"><a href="#/login">Log In</a></li>
+        			</ul>
+        		</div>
+        	</div>
+        </nav>
+    <!--/div-->
+    <div id="tpl-content" ng-include src="currentTpl"></div>
+
 
 
 	<script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
-	<script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>				
-	<script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
-	<script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
-	<script type="text/javascript" src="bower_components/a0-angular-storage/dist/angular-storage.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>				
+    <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="bower_components/a0-angular-storage/dist/angular-storage.min.js"></script>
 
-	<script type="text/javascript" src='js/app.js'></script>
-	<!--script type="text/javascript" src='js/controller.js'></script no longer necessary-->
-	<script type="text/javascript" src='js/controllers/home.controller.js'></script>
-	<script type="text/javascript" src='js/controllers/aboutUsController.js'></script>
-	<script type="text/javascript" src='js/controllers/freebiesController.js'></script>
-	<script type="text/javascript" src='js/controllers/tracksController.js'></script>
-	<script type="text/javascript" src='js/controllers/gigsController.js'></script>
-	<script type="text/javascript" src='js/controllers/subscribeController.js'></script>
-	<script type="text/javascript" src='js/controllers/logoutController.js'></script>
-	<script type="text/javascript" src='js/controllers/loginController.js'></script>
-	<script type="text/javascript" src='js/controllers/EditGigsController.js'></script>
+    <script type="text/javascript" src='js/app.js'></script>
+    <!--script type="text/javascript" src='js/controller.js'></script no longer necessary-->
+    <script type="text/javascript" src='js/controllers/home.controller.js'></script>
+    <script type="text/javascript" src='js/controllers/aboutUsController.js'></script>
+    <script type="text/javascript" src='js/controllers/freebiesController.js'></script>
+    <script type="text/javascript" src='js/controllers/tracksController.js'></script>
+    <script type="text/javascript" src='js/controllers/gigsController.js'></script>
+    <script type="text/javascript" src='js/controllers/subscribeController.js'></script>
+    <script type="text/javascript" src='js/controllers/logoutController.js'></script>
+    <script type="text/javascript" src='js/controllers/loginController.js'></script>
+    <script type="text/javascript" src='js/controllers/EditGigsController.js'></script>
 
-	<script type="text/javascript" src='js/services/service.js'></script>
-	<script type="text/javascript" src='js/services/GigServices.js'></script>
-	<script type="text/javascript" src='js/directive.js'></script>
-	<script type="text/javascript" src='js/collapseDirective.js'></script>
+    <script type="text/javascript" src='js/services/service.js'></script>
+    <script type="text/javascript" src='js/services/GigServices.js'></script>
+    <script type="text/javascript" src='js/directive.js'></script>
+    <script type="text/javascript" src='js/collapseDirective.js'></script>
 
-	<script type="text/javascript" src='js/media.js'></script>
-	<!--script type="text/javascript" src='js/recollapse.js'></script-->
-	<script type="text/javascript" src='js/menucollapse.js'></script>
+    <script type="text/javascript" src='js/media.js'></script>
+    <!--script type="text/javascript" src='js/recollapse.js'></script-->
+    <!--script type="text/javascript" src='js/menucollapse.js'></script-->
+    <script type="text/ng-template" id="/tpl.html">
+    	<script>
+    	$('.nav, #tpl-link').on('click', function(event){
+    	  	var $clickedOn = $(event.target),
+    	  	$collapsableItems = $('div .collapse'),
+    	  	isToggleButton = ($clickedOn.closest('.navbar-toggle').length == 1),
+    	  	isLink = ($clickedOn.closest('a').length == 1),
+    	  	isOutsideNavbar = ($clickedOn.parents('.navbar').length == 0);
+    	
+    	  	if( (!isToggleButton && isLink) || isOutsideNavbar ) {
+    		$collapsableItems.each(function(){
+    	  		$(this).collapse('hide');
+    		});
+    	  }
+    	});
+    	</script>
+    </script>
 
 
 </body>

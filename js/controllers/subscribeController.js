@@ -67,5 +67,5 @@ angular.module('BandApp')
                     });
                 });
             }
-        }
+        } 
     });

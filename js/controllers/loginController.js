@@ -30,13 +30,19 @@ angular.module('BandApp')
             }).catch(function(err){
             	if(!store.get("username")){
             		//alert("You need to Subscribe before you Login");
+                    $location.path("/subscribe");
                     $(".fog").css("display", "block");
                     $('#subscribeAlert').css("display", "block").on('closed.bs.alert', function () {
                         $(".fog").css("display", "initial");
-                        $location.path("/subscribe");
                         $window.location.reload();
                     });
             	}
+            }).catch(function(){
+                console.log(err);
+                $(".fog").css("display", "block");
+                $("#OppsAlert").css("display", "block").on('closed.bs.alert', function () {
+                    $(".fog").css("display", "initial");
+                });
             });
-        }
-    })
+        };
+    });

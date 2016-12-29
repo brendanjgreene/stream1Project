@@ -27,6 +27,9 @@ angular.module('BandApp')
 
         $scope.deleteGig = function(id){
             GigAPIService.deleteGig(url + "todo/" + id, $scope.username, $scope.authToken).then(function(results){
+                $scope.gigs = $scope.gigs.filter(function(element) {
+                    return element.id !==id;
+                });
                 console.log(results);
             }).catch(function(err){
                 console.log(err);
@@ -46,7 +49,7 @@ angular.module('BandApp')
                 $scope.gig.status = "Doing";
                 //$scope.gig.id = Math.random() + 1;
                 //$scope.gig.delete($scope.gig.date);
-                console.log($scope.gig);
+                //console.log($scope.gig);
             
                 GigAPIService.createGig(url + "todo/", $scope.gig, $scope.authToken).then(function(results){
                     console.log(results);

@@ -1,4 +1,4 @@
-angular.module('BandApp', [ //clean
+angular.module('BandApp', [
     'ngRoute',
     'angular-storage'
 ]);
@@ -34,7 +34,7 @@ angular.module('BandApp').config(function($routeProvider) {
 			controller: "logoutController"
 		})
 		.when('/gigs/edit/:id', {
-			templateUrl: "templates/edit-gigs.html",
+			templateUrl: "templates/editGigs.html",
 			controller: "EditGigsController"
 		})
 		.when('/login', {

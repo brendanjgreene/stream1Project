@@ -4,25 +4,7 @@ this is my new read me file for this project
 
 ## Overview
 
-This App will be a band website
-
-## Features
-
-### Existing Features
-- Subscribe to newsletter
-- Log in
-- log Out
-- Gig Request
-- See upcoming gigs
-- preview tracks and videos
-- download free tracks
-- links to amazon and itunes for purchasing
-- social links to Facebook, Vimeo, YouTube and Twitter
-
-### Features Left to implement
-- menu collapse as a directive
-- bootstrap tab
-- alert boxes in bootsrap style
+This App is a prtotype for a band website
 
 - The band requires a web site to showcase their music and publicise their availability for gigs.
 
@@ -41,6 +23,7 @@ The band will provide the UX/UI team with the following assets:
 ## Tech Used
 
 ### Some tech used includes:
+
 - [AngularJS](https://angularjs.org/)
     - We use **AngularJS** to handle routing and build custom directives (calls to API may also be needed not sure yet).
 - [Bootstrap](http://getbootstrap.com/)
@@ -49,6 +32,22 @@ The band will provide the UX/UI team with the following assets:
     + We use **npm** to help manage dependencies in our application.
 - [bower](https://bower.io/)
     + **Bower** is used to manage the installation of libraries and frameworks
+
+## Features
+
+### Existing Features
+- Subscribe to newsletter
+- Log in
+- log Out
+- Gig Request
+- See upcoming gigs
+- preview tracks and videos
+- download free tracks
+- links to amazon and itunes for purchasing
+- social links to Facebook, Vimeo, YouTube and Twitter
+- menu collapse as a directive
+- bootstrap tab
+- alert boxes in bootsrap style
 
 ## Contributing
 

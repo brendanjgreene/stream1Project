@@ -25,7 +25,7 @@ The band will provide the UX/UI team with the following assets:
 ### Some tech used includes:
 
 - [AngularJS](https://angularjs.org/)
-    - We use **AngularJS** to handle routing and build custom directives (calls to API may also be needed not sure yet).
+    - We use **AngularJS** to handle routing and build custom directives.
 - [Bootstrap](http://getbootstrap.com/)
     + We use **Bootstrap** to give our project a simple responsive layout.
 - [npm](https://wwwnpmjs.com/)
@@ -52,7 +52,7 @@ The band will provide the UX/UI team with the following assets:
 ## Contributing
 
 ### Getting the code up and running
-1. Firstly you will need to clone this repository by running the ```git clone <project's Github URL>``` command
+1. Firstly you will need to clone this repository by running the ```git clone https://github.com/brendanjgreene/stream1Project.git``` command
 2. After you've that you'll need to make sure that you have **npm** and **bower** installed
   1. You can get **npm** by installing Node from [here](https://nodejs.org/en/)
   2. Once you've done this you'll need to run the following command:
@@ -67,3 +67,7 @@ The band will provide the UX/UI team with the following assets:
 5. Once **http-server** is installed run ```http-server```
 6. The project will now run on [localhost](http://127.0.0.1:8080)
 7. Make changes to the code and if you think it belongs in here then just submit a pull req
+
+# Deployedon gh-pages
+
+- https://brendanjgreene.github.io/stream1Project

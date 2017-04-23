@@ -68,6 +68,6 @@ The band will provide the UX/UI team with the following assets:
 6. The project will now run on [localhost](http://127.0.0.1:8080)
 7. Make changes to the code and if you think it belongs in here then just submit a pull req
 
-# Deployedon gh-pages
+# Deployed on gh-pages at:
 
 - https://brendanjgreene.github.io/stream1Project
